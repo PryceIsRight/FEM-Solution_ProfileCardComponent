@@ -1,0 +1,147 @@
+$font-fam: 'Kumbh Sans', sans-serif;
+$gray: hsl(0, 0%, 59%);
+$gray-blue: hsl(227, 10%, 46%);
+$dark-gray-blue: hsl(229, 23%, 23%);
+$cyan: hsl(185, 75%, 39%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: $font-fam;
+}
+
+body {
+    height: 100vh;
+    background-color: $cyan;
+    overflow: hidden;
+}
+
+main {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+.subtext {
+    color: $gray;
+    font-weight: normal;
+}
+
+.card {
+    height: 450px;
+    width: 400px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    position: relative;
+    background-color: #fff;
+    border-radius: 1rem;
+
+    .profile-cover-photo-container {
+        border-radius: 1rem 1rem 0 0;
+        background-image: url(/dist/images/bg-pattern-card.svg);
+    }
+
+    .profile-info-container {
+        position: relative;
+
+        #profile-pic {
+            border: 4px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .user-info-wrapper {
+            padding: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            h1 {
+                font-size: 1.2rem;
+                margin-top: 2.5rem;
+            }
+
+            #user-location {
+                margin-bottom: 2rem;
+                display: block;
+                text-align: center;
+            }
+            
+            .user-stats-wrapper {
+                width: 75%;
+                text-align: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                position: relative;
+
+                .user-stat .stat-quantity {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .user-stat .stat-category {
+                    font-size: 16px;
+                    color: $gray;
+                }
+            }
+        }
+
+        .user-info-wrapper::after {
+            content: '';
+            height: .5px;
+            width: 100%;
+            position: absolute;
+            top: 11rem;
+            background-color: $gray;
+        }
+    }
+}
+
+.card::before {
+    content: '';
+    height: 750px;
+    width: 750px;
+    background-image: url(/dist/images/bg-pattern-top.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 200px;
+    right: 250px;
+    z-index: -1;
+}
+
+.card::after {
+    content: '';
+    height: 750px;
+    width: 750px;
+    background-image: url(/dist/images/bg-pattern-bottom.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 300px;
+    left: 220px;
+    z-index: -1;
+}
+
+// @media screen and (max-width: )
